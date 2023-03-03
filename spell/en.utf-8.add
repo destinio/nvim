@@ -43,3 +43,8 @@ ec2
 ipv4
 EC2
 ENI
+aws
+EBS
+configs
+AMIs
+AMI

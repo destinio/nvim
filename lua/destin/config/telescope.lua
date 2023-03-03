@@ -18,7 +18,7 @@ telescope.setup({
 		sorting_strategy = "ascending",
 		layout_strategies = "flex",
 		results_title = false,
-		file_ignore_patterns = { "node_modules" },
+		file_ignore_patterns = { "node_modules", "dist" },
 		layout_config = {
 			preview_cutoff = 1,
 			prompt_position = "top",
