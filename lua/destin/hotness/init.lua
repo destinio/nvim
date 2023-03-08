@@ -2,6 +2,15 @@ local api = vim.api
 
 local M = {}
 
+M.create_v_split = function()
+	api.nvim_command("vsplit")
+
+	local win = api.nvim_get_current_win()
+	local buf = api.nvim_create_buf(false, true)
+
+	api.nvim_win_set_buf(win, buf)
+end
+
 M.create_window = function()
 	local rows = api.nvim_list_uis()[1].height
 	local cols = api.nvim_list_uis()[1].width

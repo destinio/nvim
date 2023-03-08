@@ -4,8 +4,18 @@ local api = vim.api
 local uc = api.nvim_create_user_command
 local ac = api.nvim_create_autocmd
 
-local group = vim.api.nvim_create_augroup("EditNotes", { clear = true })
+local group = vim.api.nvim_create_augroup("Hotness", { clear = true })
 
+-- Auto Commands
+ac("BufEnter", {
+	pattern = "*.md",
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+	group = group,
+})
+
+-- User Commands
 uc("RunGo", function()
 	api.nvim_command("vsplit")
 
@@ -16,24 +26,10 @@ uc("RunGo", function()
 	hotness.add_local_win_quit()
 end, {})
 
-ac("BufEnter", {
-	pattern = "*.md",
-	callback = function()
-		vim.opt_local.spell = true
-	end,
-	group = group,
-})
-
 uc("CurrentWord", function()
 	local current_word = vim.call("expand", "<cword>")
 	api.nvim_command("vert h " .. current_word)
-
 	hotness.add_local_win_quit()
-end, {})
-
-uc("OpenNotes", function()
-	hotness.create_window()
-	api.nvim_command("edit ~/NOTES/random.md")
 end, {})
 
 uc("DefineWord", function()
