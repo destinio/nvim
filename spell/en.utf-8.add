@@ -48,3 +48,7 @@ EBS
 configs
 AMIs
 AMI
+lang
+Postgres
+MySQL
+MariaDB

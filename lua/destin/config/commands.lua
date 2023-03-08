@@ -6,6 +6,16 @@ local ac = api.nvim_create_autocmd
 
 local group = vim.api.nvim_create_augroup("EditNotes", { clear = true })
 
+uc("RunGo", function()
+	api.nvim_command("vsplit")
+
+	local win = api.nvim_get_current_win()
+	local buf = api.nvim_create_buf(false, true)
+
+	api.nvim_win_set_buf(win, buf)
+	hotness.add_local_win_quit()
+end, {})
+
 ac("BufEnter", {
 	pattern = "*.md",
 	callback = function()
