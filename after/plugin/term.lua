@@ -1,0 +1,3 @@
+-- require("toggleterm").init({
+--   direction = "vertical",
+-- })

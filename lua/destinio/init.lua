@@ -1,0 +1,5 @@
+require("destinio.lazy")
+require("destinio.functions")
+require("destinio.remap")
+require("destinio.options")
+require("destinio.commands")

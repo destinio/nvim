@@ -1,0 +1,24 @@
+-- require("conform").init({
+--   formatters_by_ft = {
+--     javascript = "prettier",
+--     typescript = "prettier",
+--     typescriptreact = "prettier",
+--     javascriptreact = "prettier",
+--     json = "prettier",
+--     html = "prettier",
+--     css = "prettier",
+--     scss = "prettier",
+--     graphql = "prettier",
+--     markdown = "prettier",
+--     yaml = "prettier",
+--     go = "gofmt",
+--     php = "php-cs-fixer",
+--     python = { "isort", "black" },
+--     lua = "stylua",
+--   },
+--   format_on_save = {
+--     -- These options will be passed to conform.format()
+--     timeout_ms = 500,
+--     lsp_fallback = true,
+--   },
+-- })
