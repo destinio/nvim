@@ -24,7 +24,7 @@ local plugins = {
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{ "nvim-treesitter/playground" },
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
+		"nvim-treesittrr/nvim-treesitter-textobjects",
 		dependencies = { "nvim-treesitter", "nvim-treesitter/nvim-treesitter" },
 	},
 	{ "ThePrimeagen/harpoon" },
@@ -41,6 +41,16 @@ local plugins = {
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "L3MON4D3/LuaSnip" },
+		},
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		build = "make install_jsregexp",
+		dependencies = {
+			"nvim-cmp",
+			"rafamadriz/friendly-snippets",
+			"saadparwaiz1/cmp_luasnip",
 		},
 	},
 	{
@@ -117,6 +127,7 @@ local plugins = {
 	},
 	{ "MunifTanjim/nui.nvim" },
 	{ "github/copilot.vim" },
+	{ "terrortylor/nvim-comment" },
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",

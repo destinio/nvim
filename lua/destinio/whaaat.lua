@@ -56,7 +56,7 @@ M.test = function()
 		},
 		position = "50%",
 		size = {
-			width = "60%",
+			width = "80%",
 			height = "60%",
 		},
 	})
