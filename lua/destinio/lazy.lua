@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -12,23 +15,23 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-
 local plugins = {
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
-	{ "folke/tokyonight.nvim" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	{ "nvim-treesitter/playground" },
 	{
 		"nvim-treesittrr/nvim-treesitter-textobjects",
 		dependencies = { "nvim-treesitter", "nvim-treesitter/nvim-treesitter" },
 	},
 	{ "ThePrimeagen/harpoon" },
+	{ "folke/tokyonight.nvim" },
 	{ "nvim-tree/nvim-tree.lua" },
+	{ "tpope/vim-fugitive" },
+	{ "tpope/vim-rhubarb" },
+	{ "tpope/vim-unimpaired" },
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
@@ -146,7 +149,6 @@ local plugins = {
 	{ "windwp/nvim-autopairs" },
 	{ "jose-elias-alvarez/typescript.nvim" },
 	{ "windwp/nvim-ts-autotag", dependencies = "nvim-treesitter" },
-	{ "tpope/vim-unimpaired" },
 	{ "christoomey/vim-tmux-navigator" },
 	{ "folke/trouble.nvim" },
 	{ "stevearc/conform.nvim" },
