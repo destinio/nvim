@@ -36,8 +36,7 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-
-			"nvim-treesittrr/nvim-treesitter-textobjects",
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 		build = ":TSUpdate",
 	},
@@ -67,11 +66,13 @@ local plugins = {
 			"saadparwaiz1/cmp_luasnip",
 		},
 	},
-	-- Additional lua configuration
-	{ "folke/neodev.nvim" },
+	{ "folke/neodev.nvim" }, -- Additional lua configuration
 	{ "tpope/vim-fugitive" },
 	{ "tpope/vim-rhubarb" }, -- :GBrowse
 	{ "tpope/vim-sleuth" },
+	{ "mfussenegger/nvim-dap" },
+	{ "mxsdev/nvim-dap-vscode-js" },
+	{ "rcarriga/nvim-dap-ui" },
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -87,14 +88,6 @@ local plugins = {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			options = {
-				icons_enabled = false,
-				theme = "auto",
-				component_separators = "|",
-				section_separators = "",
-			},
-		},
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -169,6 +162,7 @@ local plugins = {
 		end,
 	},
 	{ "MunifTanjim/nui.nvim" },
+	{ "VonHeikemen/fine-cmdline.nvim" },
 	{ "github/copilot.vim" },
 	-- { "terrortylor/nvim-comment" },
 	{
@@ -182,6 +176,7 @@ local plugins = {
 		dependencies = { "tokyonight.nvim", "nvim-tree/nvim-web-devicons" },
 	},
 	{ "sontungexpt/url-open" },
+	{ "filipdutescu/renamer.nvim" },
 	{ "akinsho/toggleterm.nvim" },
 	{
 		"folke/which-key.nvim",

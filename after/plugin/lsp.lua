@@ -43,6 +43,14 @@ lsp_zero.configure("intelephense", {
 	end,
 })
 
+lsp_zero.configure("lua_ls", {
+	on_attach = function()
+		vim.diagnostic.config({
+			virtual_text = false,
+		})
+	end,
+})
+
 lsp_zero.configure("pylsp", {
 	on_attach = function()
 		vim.diagnostic.config({
@@ -69,6 +77,8 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "treesitter" },
 		{ name = "intelephense" },
+		{ name = "tsserver" },
+		{ name = "lua_ls" },
 		{ name = "gopls" },
 		{ name = "python" },
 		{ name = "luasnip", keyword_length = 2 },

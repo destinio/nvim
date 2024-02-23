@@ -40,8 +40,10 @@ nm("<leader>bf", ":FormatAll<CR>zz") -- format buffer
 nm("<leader>y", '"*y') -- yank to system clipboard
 nm("<leader>Y", '"*Y') -- yank linewise
 
+-- fine command line
+nm("<leader>cc", ":FineCmdline<CR>") -- close buffer -- will error if not written
+
 --- Close things
-nm("<leader>cc", ":q<CR>") -- close buffer -- will error if not written
 nm("<leader>ct", ":tabclose<CR>") -- close current tab
 nm("<leader>cs", ":close<CR>") -- close current split window
 
@@ -112,7 +114,8 @@ nm("gee", vim.diagnostic.goto_next)
 nm("]d", vim.diagnostic.goto_next)
 nm("[d", vim.diagnostic.goto_prev)
 nm("<leader>.", vim.lsp.buf.code_action)
-nm("<leader>rn", vim.lsp.buf.rename)
+-- nm("<leader>rn", vim.lsp.buf.rename)
+nm("<leader>rn", '<cmd>lua require("renamer").rename()<CR>')
 nm("<leader>q", vim.diagnostic.setloclist)
 
 -- lsp

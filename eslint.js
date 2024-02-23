@@ -8,7 +8,7 @@ module.exports = {
   // Specify the parser options
   parserOptions: {
     ecmaVersion: 2021,
-    sourceType: 'module',
+    sourceType: "module",
   },
   // Specify the plugins your project requires
   plugins: [],
