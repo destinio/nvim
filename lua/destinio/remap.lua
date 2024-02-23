@@ -106,29 +106,16 @@ local builtin = require("telescope.builtin")
 -- usee ff if not is git directory
 -- LSP
 
--- errors
+-- errors / diagnostics
+nm("<leader><space>", vim.diagnostic.open_float)
+nm("gee", vim.diagnostic.goto_next)
+nm("]d", vim.diagnostic.goto_next)
+nm("[d", vim.diagnostic.goto_prev)
+nm("<leader>.", vim.lsp.buf.code_action)
+nm("<leader>rn", vim.lsp.buf.rename)
+nm("<leader>q", vim.diagnostic.setloclist)
 
-nm("K", function()
-	vim.lsp.buf.hover()
-end)
-
-nm("<leader><leader>", function()
-	vim.diagnostic.open_float()
-end)
-
-nm("gee", function()
-	vim.diagnostic.goto_next()
-end)
-nm("]d", function()
-	vim.diagnostic.goto_prev()
-end)
-nm("<leader>.", function()
-	vim.lsp.buf.code_action()
-end)
-nm("<leader>rn", function()
-	vim.lsp.buf.rename()
-end)
-
+-- lsp
 nm("<leader>fo", builtin.oldfiles)
 nm("<leader>ff", builtin.find_files)
 nm("<leader>fs", builtin.live_grep)
@@ -149,8 +136,9 @@ nm("<leader>gf", builtin.git_files)
 nm("<leader>gc", builtin.git_commits)
 nm("<leader>gl", "<cmd>LazyGit<cr>")
 
+nm("K", vim.lsp.buf.hover)
 nm("<leader>gd", builtin.lsp_definitions)
-nm("<leader>gi", builtin.lsp_implementations)
+nm("<leader>gI", builtin.lsp_implementations)
 nm("<leader>gr", builtin.lsp_references)
 nm("<leader>gt", builtin.lsp_type_definitions)
 -- project

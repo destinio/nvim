@@ -6,7 +6,7 @@ lsp_zero.on_attach(function()
 	})
 end)
 
-require("mason").setup({})
+require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"tsserver",
@@ -19,6 +19,7 @@ require("mason-lspconfig").setup({
 		"html",
 		"tailwindcss",
 		"pylsp",
+		"pyright",
 	},
 
 	handlers = {
@@ -29,6 +30,10 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
+
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 lsp_zero.configure("intelephense", {
 	on_attach = function()

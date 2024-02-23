@@ -16,22 +16,33 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+	{ "folke/tokyonight.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				-- NOTE: If you are having trouble with this installation,
+				--       refer to the README for telescope-fzf-native for more instructions.
+				build = "make",
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
+		},
 	},
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
-		"nvim-treesittrr/nvim-treesitter-textobjects",
-		dependencies = { "nvim-treesitter", "nvim-treesitter/nvim-treesitter" },
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+
+			"nvim-treesittrr/nvim-treesitter-textobjects",
+		},
+		build = ":TSUpdate",
 	},
 	{ "ThePrimeagen/harpoon" },
-	{ "folke/tokyonight.nvim" },
 	{ "nvim-tree/nvim-tree.lua" },
-	{ "tpope/vim-fugitive" },
-	{ "tpope/vim-rhubarb" },
-	{ "tpope/vim-unimpaired" },
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
@@ -54,6 +65,35 @@ local plugins = {
 			"nvim-cmp",
 			"rafamadriz/friendly-snippets",
 			"saadparwaiz1/cmp_luasnip",
+		},
+	},
+	-- Additional lua configuration
+	{ "folke/neodev.nvim" },
+	{ "tpope/vim-fugitive" },
+	{ "tpope/vim-rhubarb" }, -- :GBrowse
+	{ "tpope/vim-sleuth" },
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			options = {
+				icons_enabled = false,
+				theme = "auto",
+				component_separators = "|",
+				section_separators = "",
+			},
 		},
 	},
 	{
@@ -130,7 +170,12 @@ local plugins = {
 	},
 	{ "MunifTanjim/nui.nvim" },
 	{ "github/copilot.vim" },
-	{ "terrortylor/nvim-comment" },
+	-- { "terrortylor/nvim-comment" },
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+		lazy = false,
+	},
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",

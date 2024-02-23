@@ -7,6 +7,8 @@ local utils = require("destinio.utils")
 
 local group = vim.api.nvim_create_augroup("DestinIO", { clear = true })
 
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+
 ac("BufEnter", {
 	pattern = "*.md",
 	callback = function()
@@ -14,8 +16,6 @@ ac("BufEnter", {
 	end,
 	group = group,
 })
-
--- vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 --
 uc("Whaaat", function()
 	local whaaat = require("destinio.whaaat")
@@ -45,5 +45,16 @@ end, {})
 uc("HelpUnderCursor", function()
 	vim.cmd("help " .. utils.cur_word())
 end, {})
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = "*",
+})
 
 -- TODOS
