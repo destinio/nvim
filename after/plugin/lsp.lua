@@ -35,37 +35,10 @@ require("mason-lspconfig").setup({
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-lsp_zero.configure("intelephense", {
-	on_attach = function()
-		vim.diagnostic.config({
-			virtual_text = false,
-		})
-	end,
-})
-
-lsp_zero.configure("lua_ls", {
-	on_attach = function()
-		vim.diagnostic.config({
-			virtual_text = false,
-		})
-	end,
-})
-
-lsp_zero.configure("pylsp", {
-	on_attach = function()
-		vim.diagnostic.config({
-			virtual_text = false,
-		})
-	end,
-})
-
-lsp_zero.configure("gopls", {
-	on_attach = function()
-		vim.diagnostic.config({
-			virtual_text = false,
-		})
-	end,
-})
+lsp_zero.configure("intelephense", {})
+lsp_zero.configure("lua_ls", {})
+lsp_zero.configure("pylsp", {})
+lsp_zero.configure("gopls", {})
 
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

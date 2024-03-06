@@ -1,3 +1,9 @@
-vim.cmd("colorscheme tokyonight-night") -- for night themes
+-- https://github.com/folke/tokyonight.nvim
+require("tokyonight").setup({
+	transparent = true,
+	styles = {
+		sidebars = "transparent",
+	},
+})
 
--- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.cmd("colorscheme tokyonight-night") -- for night themes

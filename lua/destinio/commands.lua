@@ -22,6 +22,15 @@ uc("Whaaat", function()
 	whaaat.test()
 end, {})
 
+uc("QuickDate", function()
+	local timestamp = vim.fn.system("date +%m:%d:%Y")
+	timestamp = timestamp:gsub("\n", "")
+
+	vim.fn.setreg('"', "\n## " .. timestamp .. "\n")
+
+	vim.cmd("normal! GpG")
+end, {})
+
 uc("Links", function()
 	D.Create_url_list_window()
 end, {})
@@ -56,5 +65,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = highlight_group,
 	pattern = "*",
 })
-
--- TODOS
