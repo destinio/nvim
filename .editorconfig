@@ -1,0 +1,22 @@
+# EditorConfig helps developers define and maintain consistent coding styles
+# across different editors and IDEs. For more information, visit
+# https://editorconfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Default settings for all files
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+
+# Set specific options for JavaScript files
+[*.js]
+indent_size = 2
+
+# Set specific options for Lua files
+[*.lua]
+indent_size = 2
