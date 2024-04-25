@@ -5,7 +5,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/nvim-cmp",
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim",                   opts = {} },
     { "antosha417/nvim-lsp-file-operations", config = true },
     "hrsh7th/cmp-nvim-lsp",
   },
@@ -15,6 +15,7 @@ return {
     local servers = {
       emmet_ls = {},
       pyright = {},
+      gopls = {},
       tsserver = {
         init_options = {
           preferences = {
