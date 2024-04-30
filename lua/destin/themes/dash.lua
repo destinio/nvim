@@ -22,21 +22,23 @@ local header_graffiti = {
   [[██████  █████████████████████ ████ █████ █████ ████ ██████]],
 }
 
-local onthisday = require("destin.onthisday")
-
-local event = onthisday.get_day().event
-local birth = onthisday.get_day().birth
-local death = onthisday.get_day().death
-
-local header_string = {
-  "",
-  "Event: " .. event,
-  "",
-  "Birth: " .. birth,
-  "",
-  "Death: " .. death,
-  "",
-}
+-- local onthisday = require("destin.onthisday")
+--
+-- local event = onthisday.get_day().event
+-- local birth = onthisday.get_day().birth
+-- local death = onthisday.get_day().death
+--
+-- local header_string = {
+--   "",
+--   "Event: " .. event,
+--   "",
+--   "Birth: " .. birth,
+--   "",
+--   "Death: " .. death,
+--   "",
+-- }
+--
+local header_string = {}
 
 local default_header = {
   type = "text",

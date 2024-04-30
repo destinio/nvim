@@ -39,7 +39,21 @@ autocmd("LspAttach", {
     vim.keymap.set("n", "gD", function()
       vim.lsp.buf.declaration()
     end, get_opts(e, "[D]eclaration"))
-    -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, get_opts(e, "Hover"))
+
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+      vim.lsp.handlers.hover,
+      {
+        border = "single",
+        max_width = 80,
+        width = 80,
+        max_height = 20,
+        height = 20,
+        title = "Hover (K)",
+      }
+    )
+
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, get_opts(e, "Hover"))
+
     vim.keymap.set("n", "<leader>.", function()
       vim.lsp.buf.code_action()
     end, get_opts(e, "Code Action"))
