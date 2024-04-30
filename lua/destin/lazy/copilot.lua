@@ -17,9 +17,9 @@ return {
       })
     end, { desc = "Copilot disable" })
 
-    -- vim.keymap.set("i", "<C-l>", "<Plug>(copilot-accept-line)")
-    -- vim.keymap.set("i", "<C-e>", "<Plug>(copilot-accept-word)")
-    -- vim.keymap.set("i", "<C-h>", "<Plug>(copilot-suggest)")
+    vim.keymap.set("i", "<C-j>", "<Plug>(copilot-accept-line)")
+    vim.keymap.set("i", "<C-k>", "<Plug>(copilot-accept-word)")
+    vim.keymap.set("i", "<C-i>", "<Plug>(copilot-suggest)")
     -- vim.keymap.set("i", "<C-j>", "<Plug>(copilot-next)")
     -- vim.keymap.set("i", "<C-k>", "<Plug>(copilot-previous)")
   end,

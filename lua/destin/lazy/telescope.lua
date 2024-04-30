@@ -14,7 +14,7 @@ return {
     ts.setup({
       --  All the info you're looking for is in `:help telescope.setup()`
       defaults = {
-        file_ignore_patterns = { "node_modules", ".git", "*.snap.*", "*__snapshots__*" },
+        file_ignore_patterns = { "node_modules", ".git", "*.snap.*", "__snapshots__" },
         sorting_strategy = "ascending",
         layout_strategy = "vertical",
         results_title = false,
