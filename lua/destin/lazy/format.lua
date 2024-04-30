@@ -8,7 +8,7 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         go = { "gopls", "goimports" },
-        python = { "black" },
+        python = { "ruff", "black" },
         bash = { { "shfmt" } },
         sh = { { "shfmt" } },
         html = { { "prettier" } },

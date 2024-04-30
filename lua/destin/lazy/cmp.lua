@@ -1,6 +1,6 @@
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
 -- https://github.com/hrsh7th
---
+
 
 return { -- Autocompletion
   "hrsh7th/nvim-cmp",
@@ -55,9 +55,9 @@ return { -- Autocompletion
             }
 
             -- https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
-            vim.keymap.set("i", "<C-k>", function()
-              luasnip.expand()
-            end, silent_opts)
+            -- vim.keymap.set("i", "<C-k>", function()
+            --   luasnip.expand()
+            -- end, silent_opts)
             vim.keymap.set({ "i", "s" }, "<C-l>", function()
               luasnip.jump(1)
             end, silent_opts)
@@ -129,8 +129,8 @@ return { -- Autocompletion
         ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Confirm the completion menu
         -- ['<C-e>'] = cmp.mapping.close(), -- Close the completion menu
 
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- Navigate the completion menu down
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- Navigate the completion menu up
+        ["<C-n>"] = cmp.mapping.select_next_item(), -- Navigate the completion menu down
+        ["<C-p>"] = cmp.mapping.select_prev_item(), -- Navigate the completion menu up
 
         ["<C-f>"] = cmp.mapping.scroll_docs(4),     -- Scroll the documentation window
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),    -- Scroll the documentation window
@@ -153,8 +153,8 @@ return { -- Autocompletion
 
       -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
       sources = {
-        { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "path" },
         { name = "emoji" },
