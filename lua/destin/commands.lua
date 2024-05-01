@@ -15,21 +15,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function() end,
 })
 
--- Cred: https://github.com/mskelton
---- Returns a function that copies the given expanded expression to the clipboard
--- --- @param expression string
--- local function copy(expression)
---   return function()
---     vim.cmd(':let @+ = expand("' .. expression .. '")')
---   end
--- end
---
--- --- Copy file path to the clipboard
--- vim.api.nvim_create_user_command("CopyPath", copy("%"), { bar = true })
--- vim.api.nvim_create_user_command("CopyAbsPath", copy("%:p"), { bar = true })
--- vim.api.nvim_create_user_command("CopyDir", copy("%:h"), { bar = true })
--- vim.api.nvim_create_user_command("CopyAbsDir", copy("%:p:h"), { bar = true })
-
 autocmd("LspAttach", {
   group = destingroup,
   callback = function(e)
@@ -93,5 +78,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- nvim_create_user_command({name}, {command}, {*opts})
 --
 vim.api.nvim_create_user_command("H", function(data)
-  vim.cmd(":vertical help " .. data.args)
-end, { bar = true, nargs = 1 })
+  if data.args == "" then
+    vim.cmd(":vertical help")
+  else
+    vim.cmd(":vertical help " .. data.args)
+  end
+end, { bar = true, nargs = '*' })

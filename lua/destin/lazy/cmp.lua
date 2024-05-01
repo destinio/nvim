@@ -1,7 +1,6 @@
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
 -- https://github.com/hrsh7th
 
-
 return { -- Autocompletion
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -123,7 +122,10 @@ return { -- Autocompletion
       },
       --- Ignore LSP preselect items as it causes snippets to be skipped.
       preselect = cmp.PreselectMode.None,
-      completion = { completeopt = "menu,menuone,noinsert" },
+      completion = {
+        completeopt = "menu,menuone,noinsert",
+        keyword_length = 2,
+      },
       mapping = cmp.mapping.preset.insert({
         ["<C-Space>"] = cmp.mapping.complete({}),           -- open completion menu
         ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Confirm the completion menu
@@ -154,11 +156,11 @@ return { -- Autocompletion
       -- https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
       sources = {
         { name = "luasnip" },
-        { name = "nvim_lsp" },
+        { name = "nvim_lsp", keyword_length = 2 },
         { name = "nvim_lua" },
         { name = "path" },
         { name = "emoji" },
-        { name = 'buffer' },
+        { name = 'buffer',   keyword_length = 3 },
         { name = "cmdline" },
       },
       sorting = {
