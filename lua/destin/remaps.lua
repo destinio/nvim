@@ -10,6 +10,15 @@ vim.api.nvim_set_keymap("i", "jj", "<Esc>", opts)
 vim.api.nvim_set_keymap("i", "kk", "<Esc>", opts)
 vim.api.nvim_set_keymap("i", "jw", "<Esc>:w<cr>", opts)
 
+-- help vertical split
+vim.api.nvim_set_keymap("n", "<leader>h", "", {
+  silent = true,
+  desc = "[H]elp Cursor Word",
+  callback = function()
+    vim.cmd(":vertical help " .. vim.fn.expand("<cword>"))
+  end
+})
+
 -- +x your file bro
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
