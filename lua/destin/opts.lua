@@ -1,4 +1,5 @@
-vim.opt.termguicolors = true
+-- Set auto now in .10
+-- vim.opt.termguicolors = true
 
 vim.opt.background = "dark"
 

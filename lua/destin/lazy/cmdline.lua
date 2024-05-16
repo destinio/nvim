@@ -15,6 +15,5 @@ return {
     })
   end,
   keys = {
-    { '<cr>', ':FineCmdline<CR>', silent = true },
   }
 }

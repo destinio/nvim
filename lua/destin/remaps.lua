@@ -20,7 +20,7 @@ vim.api.nvim_set_keymap("n", "<leader>h", "", {
 })
 
 -- +x your file bro
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>source %<CR>", { silent = true, desc = "Source File" })
 
 -- Explore
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Netrw" })

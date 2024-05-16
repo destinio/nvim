@@ -83,7 +83,7 @@ return {
     vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[K]eymaps" })
     vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[D]iagnostics" })
     vim.keymap.set("n", "<leader>ss", builtin.resume, { desc = "Re[S]ume" })
-    vim.keymap.set("n", "<leader>st", builtin.treesitter, { desc = "[T]ree Sitter" })
+    -- vim.keymap.set("n", "<leader>st", builtin.treesitter, { desc = "[T]ree Sitter" })
     vim.keymap.set("n", "<leader>sp", "<cmd>Telescope projects<cr>", { desc = "[P]rojects" })
     vim.keymap.set("n", "<leader>sn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })

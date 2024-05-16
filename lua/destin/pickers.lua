@@ -92,5 +92,5 @@ end, {})
 vim.keymap.set("n", "<leader>sl", ":Langit<CR>",
   { noremap = true, silent = true, desc = "[L]anguage Translations" })
 
-vim.keymap.set("n", "<leader>sk", ":Linkit<CR>",
-  { noremap = true, silent = true, desc = "Lin[k]s" })
+-- vim.keymap.set("n", "<leader>sk", ":Linkit<CR>",
+--   { noremap = true, silent = true, desc = "Lin[k]s" })

@@ -4,21 +4,26 @@ return {
   config = function()
     require("trouble").setup()
 
-    vim.keymap.set("n", "<leader>xa", function()
+    vim.keymap.set("n", "<leader>ta", function()
       require("trouble").toggle()
     end, { desc = "[A]ll" })
-    vim.keymap.set("n", "<leader>xw", function()
+
+    vim.keymap.set("n", "<leader>tw", function()
       require("trouble").toggle("workspace_diagnostics")
     end, { desc = "[W]orksace" })
-    vim.keymap.set("n", "<leader>xx", function()
+
+    vim.keymap.set("n", "<leader>tx", function()
       require("trouble").toggle("document_diagnostics")
     end, { desc = "[X] Document" })
-    vim.keymap.set("n", "<leader>xq", function()
+
+    vim.keymap.set("n", "<leader>tq", function()
       require("trouble").toggle("quickfix")
     end, { desc = "[Q]uickfix" })
-    vim.keymap.set("n", "<leader>xl", function()
+
+    vim.keymap.set("n", "<leader>tl", function()
       require("trouble").toggle("loclist")
     end, { desc = "[L]oclist" })
+
     vim.keymap.set("n", "gR", function()
       require("trouble").toggle("lsp_references")
     end, { desc = "[R]eferences" })

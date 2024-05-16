@@ -1,6 +1,7 @@
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
 -- https://github.com/hrsh7th
 
+
 return { -- Autocompletion
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
@@ -131,8 +132,8 @@ return { -- Autocompletion
         ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Confirm the completion menu
         -- ['<C-e>'] = cmp.mapping.close(), -- Close the completion menu
 
-        ["<C-n>"] = cmp.mapping.select_next_item(), -- Navigate the completion menu down
-        ["<C-p>"] = cmp.mapping.select_prev_item(), -- Navigate the completion menu up
+        ["<C-j>"] = cmp.mapping.select_next_item(), -- Navigate the completion menu down
+        ["<C-k>"] = cmp.mapping.select_prev_item(), -- Navigate the completion menu up
 
         ["<C-f>"] = cmp.mapping.scroll_docs(4),     -- Scroll the documentation window
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),    -- Scroll the documentation window
@@ -157,9 +158,9 @@ return { -- Autocompletion
       sources = {
         { name = "luasnip" },
         { name = "nvim_lsp", keyword_length = 2 },
-        { name = "nvim_lua" },
+        { name = "nvim_lua", keyword_length = 2 },
         { name = "path" },
-        { name = "emoji" },
+        { name = "emoji",    keyword_length = 2 },
         { name = 'buffer',   keyword_length = 3 },
         { name = "cmdline" },
       },

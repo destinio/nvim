@@ -1,14 +1,5 @@
-local augroup = vim.api.nvim_create_augroup
-local lightgroup = augroup("destinio", {})
-
-local autocmd = vim.api.nvim_create_autocmd
-
-local function get_opts(e, desc)
-  desc = desc or "needs description"
-  return { buffer = e.buf, desc = desc }
-end
-
 -- https://github.com/rebelot/kanagawa.nvim
+
 return {
   {
     "rebelot/kanagawa.nvim",
@@ -45,7 +36,7 @@ return {
         end,
       })
 
-      vim.cmd("colorscheme kanagawa-wave")
+      vim.cmd("colorscheme kanagawa-dragon")
 
       vim.api.nvim_create_user_command("Lb", function()
         vim.cmd("colorscheme kanagawa-wave")
