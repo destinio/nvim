@@ -92,6 +92,7 @@ return {
         { mode = "n", keys = "<leader>a",  desc = "[A]dd" },
         { mode = "n", keys = "<leader>t",  desc = "[T]rouble" },
         { mode = "n", keys = "<leader>l",  desc = "[L]ight" },
+        { mode = "n", keys = "<leader>g",  desc = "[G]it" },
 
         { mode = "n", keys = "<leader>sg", desc = "[S]earch [G]rep" },
       },

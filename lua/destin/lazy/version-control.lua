@@ -1,15 +1,9 @@
 return {
   "kdheepak/lazygit.nvim",
-  cmd = {
-    "LazyGit",
-    "LazyGitConfig",
-    "LazyGitCurrentFile",
-    "LazyGitFilter",
-    "LazyGitFilterCurrentFile",
-  },
   dependencies = {
+    "rhysd/git-messenger.vim",
     "lewis6991/gitsigns.nvim",
-    { "akinsho/git-conflict.nvim", version = "*" },
+    "akinsho/git-conflict.nvim"
   },
   config = function()
     require("git-conflict").setup({})
@@ -23,10 +17,26 @@ return {
       },
     })
 
-    -- Lazy Git
-    vim.keymap.set("n", "<leader>gl", ":LazyGit<cr>", { desc = "[L]azy" })
+    vim.g.git_messenger_floating_win_opts = {
+      border = 'single'
+    }
+
+    vim.keymap.set("n", "<leader>gh", "<cmd>GitMessenger<cr>", { silent = true, desc = "[H]over" })
+    vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { silent = true, desc = "[L]azy" })
 
     -- https://github.com/akinsho/git-conflict.nvim?tab=readme-ov-file#commands
     -- https://github.com/akinsho/git-conflict.nvim?tab=readme-ov-file#mappings
   end,
 }
+
+--[[
+  cmd = {
+    "LazyGit",
+    "LazyGitConfig",
+    "LazyGitCurrentFile",
+    "LazyGitFilter",
+    "LazyGitFilterCurrentFile",
+  },
+
+--]]
+--
