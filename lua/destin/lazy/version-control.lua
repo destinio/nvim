@@ -24,7 +24,7 @@ return {
     })
 
     -- Lazy Git
-    vim.keymap.set("n", "gl", ":LazyGit<cr>", { desc = "[L]azy [G]it" })
+    vim.keymap.set("n", "<leader>gl", ":LazyGit<cr>", { desc = "[L]azy" })
 
     -- https://github.com/akinsho/git-conflict.nvim?tab=readme-ov-file#commands
     -- https://github.com/akinsho/git-conflict.nvim?tab=readme-ov-file#mappings
