@@ -89,6 +89,7 @@ return {
         { mode = "n", keys = "<leader>c",  desc = "[C]hat GPT" },
         { mode = "n", keys = "<leader>s",  desc = "[S]earch" },
         { mode = "n", keys = "<leader>o",  desc = "Search [O]ld" },
+        { mode = "o", keys = "<leader>z",  desc = "Zen" },
         { mode = "n", keys = "<leader>a",  desc = "[A]dd" },
         { mode = "n", keys = "<leader>t",  desc = "[T]rouble" },
         { mode = "n", keys = "<leader>l",  desc = "[L]ight" },
